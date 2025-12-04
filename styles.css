@@ -215,7 +215,6 @@ body {
 .option-box.active .options-content {
   max-height: 400px;
   opacity: 1;
-  /* margin-top: 25px; */
 }
 
 .size-color-row {
