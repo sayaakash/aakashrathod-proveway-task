@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+    sans-serif;
+  background-color: #2a2a2a;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 462px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.title {
+  color: #ff6b82;
+  font-family: "Inter";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.title::before,
+.title::after {
+  content: "";
+  flex: 1;
+  height: 0.904px;
+  background-color: #c8c8c8;
+}
+
+.title::before {
+  left: 0;
+}
+
+.title::after {
+  right: 0;
+}
+
+.option-box {
+  border: 0.904px solid #c8c8c8;
+  background: #fff;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.option-box.active {
+  gap: 24px;
+  border-color: #ff6b82;
+  background: #fff9fa;
+}
+
+.option-box.popular {
+  border: 2px solid #ff6b82;
+  padding-block: 40px;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  background-color: #ff6b82;
+  padding: 8px 20px;
+  color: #fff;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 0 0 8px 8px;
+}
+
+.option-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.option-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.radio-button {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #c8c8c8;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.option-box.active .radio-button {
+  border-color: #ff6b82;
+}
+
+.option-box.active .radio-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #ff6b82;
+  border-radius: 50%;
+}
+
+.option-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.option-title {
+  color: #000;
+  font-family: "Inter";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.discount-badge {
+  background-color: #ff6b82;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 1px;
+  color: #fff;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.subtitle {
+  color: #000;
+  font-family: "Inter";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.option-right {
+  text-align: right;
+}
+
+.price {
+  color: #000;
+  font-family: "Inter";
+  font-size: 14.461px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.original-price {
+  color: #000;
+  font-family: "Inter";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
+.options-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-box.active .options-content {
+  max-height: 400px;
+  opacity: 1;
+  /* margin-top: 25px; */
+}
+
+.size-color-row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.row-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #000;
+  font-family: "Inter";
+  font-size: 9.038px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.select-wrapper {
+  width: 100px;
+  position: relative;
+}
+
+select {
+  width: 100%;
+  padding: 10px 35px 10px 15px;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  font-size: 15px;
+  background-color: white;
+  cursor: pointer;
+  appearance: none;
+  color: #333;
+}
+
+select:focus {
+  outline: none;
+  border-color: #ff6b82;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 10px;
+  color: #000;
+}
+
+.headers {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin-left: 30px;
+}
+
+.header-label {
+  color: #000;
+  font-family: "Inter";
+  font-size: 9.942px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ff6b82;
+  font-family: "Inter";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.total {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.add-to-cart {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border-radius: 4px;
+  background: #ff6b82;
+  border: none;
+  transition: background-color 0.3s ease;
+  color: #fff;
+  font-family: "Inter";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.add-to-cart:hover {
+  background-color: #ff5a8c;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer {
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Inter";
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  text-align: right;
+}
+
+.plus-icon {
+  font-size: 24px;
+}
