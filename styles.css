@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #ff6b82;
+  --gray-color: #c8c8c8;
+  --dark-color: #000;
+  --white-color: #fff;
+  --light-bg: #f5f5f5;
+  --accent-bg: #fff9fa;
+  --muted-color: rgba(0, 0, 0, 0.4);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,13 +19,13 @@ body {
     sans-serif;
   background-color: #2a2a2a;
   padding: 20px;
-  color: #333;
+  color: var(--dark-color);
 }
 
 .container {
   max-width: 462px;
   margin: 0 auto;
-  background-color: #f5f5f5;
+  background-color: var(--light-bg);
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -24,7 +34,7 @@ body {
 }
 
 .title {
-  color: #ff6b82;
+  color: var(--primary-color);
   font-family: "Inter";
   font-size: 20px;
   font-style: normal;
@@ -44,7 +54,7 @@ body {
   content: "";
   flex: 1;
   height: 0.904px;
-  background-color: #c8c8c8;
+  background-color: var(--gray-color);
 }
 
 .title::before {
@@ -56,8 +66,8 @@ body {
 }
 
 .option-box {
-  border: 0.904px solid #c8c8c8;
-  background: #fff;
+  border: 0.904px solid var(--gray-color);
+  background: var(--white-color);
   padding: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -72,12 +82,12 @@ body {
 
 .option-box.active {
   gap: 24px;
-  border-color: #ff6b82;
-  background: #fff9fa;
+  border-color: var(--primary-color);
+  background: var(--accent-bg);
 }
 
 .option-box.popular {
-  border: 2px solid #ff6b82;
+  border: 2px solid var(--primary-color);
   padding-block: 40px;
 }
 
@@ -85,9 +95,9 @@ body {
   position: absolute;
   top: 0;
   right: 4px;
-  background-color: #ff6b82;
+  background-color: var(--primary-color);
   padding: 8px 20px;
-  color: #fff;
+  color: var(--white-color);
   text-align: center;
   font-family: "Inter";
   font-size: 12px;
@@ -113,14 +123,14 @@ body {
 .radio-button {
   width: 14px;
   height: 14px;
-  border: 1px solid #c8c8c8;
+  border: 1px solid var(--gray-color);
   border-radius: 50%;
   position: relative;
   flex-shrink: 0;
 }
 
 .option-box.active .radio-button {
-  border-color: #ff6b82;
+  border-color: var(--primary-color);
 }
 
 .option-box.active .radio-button::after {
@@ -131,7 +141,7 @@ body {
   transform: translate(-50%, -50%);
   width: 8px;
   height: 8px;
-  background-color: #ff6b82;
+  background-color: var(--primary-color);
   border-radius: 50%;
 }
 
@@ -142,7 +152,7 @@ body {
 }
 
 .option-title {
-  color: #000;
+  color: var(--dark-color);
   font-family: "Inter";
   font-size: 14px;
   font-style: normal;
@@ -155,11 +165,10 @@ body {
 }
 
 .discount-badge {
-  background-color: #ff6b82;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white-color);
   padding: 4px 12px;
   border-radius: 1px;
-  color: #fff;
   text-align: center;
   font-family: "Inter";
   font-size: 12px;
@@ -169,7 +178,7 @@ body {
 }
 
 .subtitle {
-  color: #000;
+  color: var(--dark-color);
   font-family: "Inter";
   font-size: 12px;
   font-style: normal;
@@ -182,7 +191,7 @@ body {
 }
 
 .price {
-  color: #000;
+  color: var(--dark-color);
   font-family: "Inter";
   font-size: 14.461px;
   font-style: normal;
@@ -191,7 +200,7 @@ body {
 }
 
 .original-price {
-  color: #000;
+  color: var(--dark-color);
   font-family: "Inter";
   font-size: 10px;
   font-style: normal;
@@ -228,7 +237,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: #000;
+  color: var(--dark-color);
   font-family: "Inter";
   font-size: 9.038px;
   font-style: normal;
@@ -244,18 +253,18 @@ body {
 select {
   width: 100%;
   padding: 10px 35px 10px 15px;
-  border: 1px solid #c8c8c8;
+  border: 1px solid var(--gray-color);
   border-radius: 4px;
   font-size: 15px;
-  background-color: white;
+  background-color: var(--white-color);
   cursor: pointer;
   appearance: none;
-  color: #333;
+  color: var(--dark-color);
 }
 
 select:focus {
   outline: none;
-  border-color: #ff6b82;
+  border-color: var(--primary-color);
 }
 
 .select-wrapper::after {
@@ -266,7 +275,7 @@ select:focus {
   transform: translateY(-50%);
   pointer-events: none;
   font-size: 10px;
-  color: #000;
+  color: var(--dark-color);
 }
 
 .headers {
@@ -277,7 +286,7 @@ select:focus {
 }
 
 .header-label {
-  color: #000;
+  color: var(--dark-color);
   font-family: "Inter";
   font-size: 9.942px;
   font-style: normal;
@@ -290,7 +299,7 @@ select:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #ff6b82;
+  color: var(--primary-color);
   font-family: "Inter";
   font-size: 14px;
   font-style: normal;
@@ -299,7 +308,7 @@ select:focus {
 }
 
 .total {
-  color: #000;
+  color: var(--dark-color);
   font-size: 14px;
   font-weight: 400;
 }
@@ -312,10 +321,10 @@ select:focus {
   gap: 8px;
   width: 100%;
   border-radius: 4px;
-  background: #ff6b82;
+  background: var(--primary-color);
   border: none;
   transition: background-color 0.3s ease;
-  color: #fff;
+  color: var(--white-color);
   font-family: "Inter";
   font-size: 12px;
   font-style: normal;
@@ -334,13 +343,59 @@ select:focus {
 }
 
 .footer {
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--muted-color);
   font-family: "Inter";
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
   line-height: normal;
   text-align: right;
+}
+
+@media (max-width: 414px) {
+  .container {
+    max-width: 100%;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 18px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .title::before,
+  .title::after {
+    flex: 1;
+    height: 1px;
+  }
+
+  .option-box {
+    padding: 20px;
+  }
+
+  .options-content {
+    width: 100%;
+  }
+
+  .option-header {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .option-right {
+    text-align: left;
+  }
+
+
+  .select-wrapper {
+    width: 100%;
+  }
+
+  .headers {
+    display: none;
+  }
 }
 
 .plus-icon {

@@ -5,19 +5,35 @@ const prices = {
   3: 24.0,
 };
 
+function updateActiveOption(optionBox) {
+  optionBoxes.forEach((b) => b.classList.remove("active"));
+  optionBox.classList.add("active");
+
+  const option = optionBox.dataset.option;
+  const price = prices[option] || 0;
+  const totalElement = document.querySelector(".total");
+  if (totalElement) {
+    totalElement.textContent = `Total : $${price.toFixed(2)} USD`;
+  }
+}
+
+function handleOptionClick(e) {
+  if (e.target.tagName === "SELECT") return;
+
+  updateActiveOption(this);
+}
+
+function handleOptionKeydown(e) {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    updateActiveOption(this);
+  }
+}
+
 optionBoxes.forEach((box) => {
-  box.addEventListener("click", function (e) {
-    if (e.target.tagName === "SELECT") return;
-
-    optionBoxes.forEach((b) => b.classList.remove("active"));
-    this.classList.add("active");
-
-    const option = this.dataset.option;
-    const price = prices[option];
-    document.querySelector(".total").textContent = `Total : $${price.toFixed(
-      2
-    )} USD`;
-  });
+  box.addEventListener("click", handleOptionClick);
+  box.addEventListener("keydown", handleOptionKeydown);
+  box.tabIndex = 0; // Make focusable for keyboard navigation
 });
 
 document.querySelectorAll("select").forEach((select) => {
